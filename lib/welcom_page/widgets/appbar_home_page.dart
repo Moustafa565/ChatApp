@@ -1,43 +1,54 @@
-
-
-
-
 import 'package:flutter/material.dart';
 
+import '../../constants/constants.dart';
 import '../../core/pop_menu.dart';
 
-AppBar appBarhome (){
-  return AppBar(
-    backgroundColor: Color(0xff0b1014),
-    leadingWidth: double.infinity,
-    leading: Row(
-      children: [
-        Padding(
-          padding: EdgeInsets.all(10),
-          child: Text(
-            "WhatsApp",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 17,
-              fontWeight: FontWeight.w500,
-            ),
+class AppbarHomePage extends StatelessWidget {
+  const AppbarHomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      automaticallyImplyLeading: false,
+      backgroundColor: KPrimaryColor,
+      title: Text(
+        'WhatsApp ',
+        style: TextStyle(color: Colors.white),
+      ),
+      actions: [
+        IconButton(
+          icon: Icon(
+            Icons.camera_alt_outlined,
+            color: Colors.white,
           ),
-        ),
-        Spacer(),
-        Icon(
-          Icons.camera_alt_outlined,
-          color: Colors.white,
-          size: 28,
+          onPressed: () {
+            // Handle camera action
+          },
         ),
         PopupMenuButton(
-          iconColor: Colors.white,
-          itemBuilder: (context) {
-            return [
-              popMenuWidegte(text: "settings"),
-            ];
-          },
+          style: ButtonStyle(
+            iconColor: WidgetStatePropertyAll(Colors.white),
+          ),
+          color: Color(0xff0b1014),
+          itemBuilder: (context) => [
+            popMenuWidegte(
+              text: 'New group',
+            ),
+            popMenuWidegte(
+              text: 'New broadcast',
+            ),
+            popMenuWidegte(
+              text: 'Linked devices',
+            ),
+            popMenuWidegte(
+              text: 'Starred messages',
+            ),
+            popMenuWidegte(
+              text: 'Settings',
+            ),
+          ],
         )
       ],
-    ),
-  );
+    );
+  }
 }

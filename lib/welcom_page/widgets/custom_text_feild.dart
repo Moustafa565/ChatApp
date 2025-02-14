@@ -17,13 +17,10 @@ class CustomTextFeildText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
-
         hintText: hinttext,
         hintStyle: TextStyle(
-
           color: color,
           fontSize: fontsize,
           fontWeight: fontweight,

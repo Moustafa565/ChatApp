@@ -1,3 +1,5 @@
+import 'package:chat_app/constants/constants.dart';
+import 'package:chat_app/main_scafold.dart';
 import 'package:chat_app/pages/home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +16,7 @@ class ConfirmationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarWidget(),
-      backgroundColor: Color(0xff0b1014),
+      backgroundColor: KPrimaryColor,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -56,37 +58,40 @@ class ConfirmationPage extends StatelessWidget {
             ],
           ),
           Padding(
-              padding: const EdgeInsets.only(left: 150, right: 150),
-              child: CustomNumbersFeild(
-                fontweight: FontWeight.w400,
-                fontsize: 20,
-                color: Color(0xff7e878a),
-                keyboardType: TextInputType.number,
-                hinttext: '_ _ _  _ _ _',
-                textAlign: TextAlign.center,
-              ),
-
+            padding: const EdgeInsets.only(left: 150, right: 150),
+            child: CustomNumbersFeild(
+              fontweight: FontWeight.w400,
+              fontsize: 20,
+              color: Color(0xff7e878a),
+              keyboardType: TextInputType.number,
+              hinttext: '_ _ _  _ _ _',
+              textAlign: TextAlign.center,
+            ),
           ),
-
           SizedBox(
             height: 40,
           ),
-
-
           TextSttyle(
               text: 'Didn\'t receive a code?',
               color: Color(0xff21c063),
               fontsize: 12,
               fontweight: FontWeight.w600),
           Spacer(),
-      GestureDetector(onTap: (){
-        Navigator.push(context, MaterialPageRoute(builder: (context){
-          return HomePage();
-        },),);
-      },
-        child:
-          CustomButoon(text: 'Next',),)
-
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return MainScafold();
+                  },
+                ),
+              );
+            },
+            child: CustomButoon(
+              text: 'Next',
+            ),
+          )
         ],
       ),
     );

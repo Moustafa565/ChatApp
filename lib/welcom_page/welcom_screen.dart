@@ -4,6 +4,8 @@ import 'package:chat_app/welcom_page/widgets/custom_button.dart';
 
 import 'package:flutter/material.dart';
 
+import '../constants/constants.dart';
+
 class WelcomPage extends StatelessWidget {
   const WelcomPage({super.key});
 
@@ -11,13 +13,11 @@ class WelcomPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarWidget(),
-      backgroundColor: Color(0xff0b1014),
-
+      backgroundColor: KPrimaryColor,
       body: Column(
-
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-         Spacer(),
+          Spacer(),
           Image.asset(
               'lib/images/WhatsApp Image 2025-02-11 at 07.14.35_2bc87886.jpg'),
           SizedBox(
@@ -65,7 +65,6 @@ class WelcomPage extends StatelessWidget {
                     fontSize: 13,
                     fontWeight: FontWeight.w500),
               ),
-
             ],
           ),
           SizedBox(
@@ -93,14 +92,19 @@ class WelcomPage extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-
-          GestureDetector(onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return LoginPage();
-            },),);
-          },
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return LoginPage();
+                  },
+                ),
+              );
+            },
             child: CustomButoon(
-              text:'Agree and continue ' ,
+              text: 'Agree and continue ',
             ),
           ),
           Spacer(),

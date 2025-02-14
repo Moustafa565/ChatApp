@@ -1,3 +1,4 @@
+import 'package:chat_app/constants/constants.dart';
 import 'package:chat_app/pages/confirmation_page.dart';
 import 'package:chat_app/welcom_page/widgets/appbar_loginpage.dart';
 import 'package:chat_app/welcom_page/widgets/custom_numbers_feild.dart';
@@ -6,7 +7,7 @@ import 'package:flutter/material.dart';
 
 import '../core/text_style.dart';
 import '../welcom_page/widgets/app_bar_welcompage.dart';
-import '../welcom_page/widgets/custo_text_feild.dart';
+import '../welcom_page/widgets/custom_text_feild.dart';
 import '../welcom_page/widgets/custom_button.dart';
 
 class LoginPage extends StatelessWidget {
@@ -16,7 +17,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBarLoginPage(),
-      backgroundColor: Color(0xff0b1014),
+      backgroundColor: KPrimaryColor,
       body: Column(
         children: [
           TextSttyle(
@@ -69,21 +70,26 @@ class LoginPage extends StatelessWidget {
               hinttext: '+ 20 ',
               fontweight: FontWeight.w300,
               fontsize: 14,
-              color: Colors.white, textAlign: TextAlign.start,
+              color: Colors.white,
+              textAlign: TextAlign.start,
             ),
           ),
           Spacer(),
-          GestureDetector(onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context){
-              return ConfirmationPage();
-            },),);
-          },
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return ConfirmationPage();
+                  },
+                ),
+              );
+            },
             child: CustomButoon(
-              text:'Next ' ,
+              text: 'Next ',
             ),
           ),
-
-
         ],
       ),
     );
